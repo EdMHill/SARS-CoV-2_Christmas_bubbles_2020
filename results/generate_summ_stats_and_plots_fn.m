@@ -17,21 +17,21 @@ function [incidence_percentile_percentages_output,...
     %% Load the relevant data files
     if main_adherence_flag == true % 70% adherence probability runs
         if main_analysis_flag == true
-            support_bubble_only_data = load('MAT_files/support_bubble_visit_plan_main_analysis_test.mat');
-            short_faithful_bubble_data = load('MAT_files/three_household_faithful_bubble_shorter_visit_plan_main_analysis_test.mat');
-            faithful_bubble_data = load('MAT_files/three_household_faithful_bubble_visit_plan_main_analysis_test.mat');
-            fixed_bubble_data = load('MAT_files/three_household_fixed_bubble_visit_plan_main_analysis_test.mat');
-            unfaithful_bubble_data = load('MAT_files/three_household_unfaithful_bubble_visit_plan_main_analysis_test.mat');
+            support_bubble_only_data = load('MAT_files/support_bubble_visit_plan_main_analysis.mat');
+            short_faithful_bubble_data = load('MAT_files/three_household_faithful_bubble_shorter_visit_plan_main_analysis.mat');
+            faithful_bubble_data = load('MAT_files/three_household_faithful_bubble_visit_plan_main_analysis.mat');
+            fixed_bubble_data = load('MAT_files/three_household_fixed_bubble_visit_plan_main_analysis.mat');
+            unfaithful_bubble_data = load('MAT_files/three_household_unfaithful_bubble_visit_plan_main_analysis.mat');
         
             % Specify time index (row of arrays) to access
             row_idx = 6; % e.g. Entry 6 corresponds to day 5
         
         else
-            support_bubble_only_data = load('MAT_files/support_bubble_visit_plan_alternative_analysis_test.mat');
-            short_faithful_bubble_data = load('MAT_files/three_household_faithful_bubble_shorter_visit_plan_alternative_analysis_test.mat');
-            faithful_bubble_data = load('MAT_files/three_household_faithful_bubble_visit_plan_alternative_analysis_test.mat');
-            fixed_bubble_data = load('MAT_files/three_household_fixed_bubble_visit_plan_alternative_analysis_test.mat');
-            unfaithful_bubble_data = load('MAT_files/three_household_unfaithful_bubble_visit_plan_alternative_analysis_test.mat');
+            support_bubble_only_data = load('MAT_files/support_bubble_visit_plan_alternative_analysis.mat');
+            short_faithful_bubble_data = load('MAT_files/three_household_faithful_bubble_shorter_visit_plan_alternative_analysis.mat');
+            faithful_bubble_data = load('MAT_files/three_household_faithful_bubble_visit_plan_alternative_analysis.mat');
+            fixed_bubble_data = load('MAT_files/three_household_fixed_bubble_visit_plan_alternative_analysis.mat');
+            unfaithful_bubble_data = load('MAT_files/three_household_unfaithful_bubble_visit_plan_alternative_analysis.mat');
         
             % Specify time index (row of arrays) to access
             row_idx = 16; % e.g. Entry 6 corresponds to day 5
