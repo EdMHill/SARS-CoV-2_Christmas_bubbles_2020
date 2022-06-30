@@ -186,25 +186,25 @@ Save outputs to file
 =============================#
 # Set filename
 if job_ID == 1
-    output_filename = "../results/MAT_files/support_bubble_visit_plan_main_analysis_test.mat"
+    output_filename = "../results/MAT_files/support_bubble_visit_plan_main_analysis.mat"
 elseif job_ID == 2
-    output_filename = "../results/MAT_files/three_household_faithful_bubble_shorter_visit_plan_main_analysis_test.mat"
+    output_filename = "../results/MAT_files/three_household_faithful_bubble_shorter_visit_plan_main_analysis.mat"
 elseif job_ID == 3
-    output_filename = "../results/MAT_files/three_household_faithful_bubble_visit_plan_main_analysis_test.mat"
+    output_filename = "../results/MAT_files/three_household_faithful_bubble_visit_plan_main_analysis.mat"
 elseif job_ID == 4
-    output_filename = "../results/MAT_files/three_household_fixed_bubble_visit_plan_main_analysis_test.mat"
+    output_filename = "../results/MAT_files/three_household_fixed_bubble_visit_plan_main_analysis.mat"
 elseif job_ID == 5
-    output_filename = "../results/MAT_files/three_household_unfaithful_bubble_visit_plan_main_analysis_test.mat"
+    output_filename = "../results/MAT_files/three_household_unfaithful_bubble_visit_plan_main_analysis.mat"
 elseif job_ID == 6
-    output_filename = "../results/MAT_files/support_bubble_visit_plan_alternative_analysis_test.mat"
+    output_filename = "../results/MAT_files/support_bubble_visit_plan_alternative_analysis.mat"
 elseif job_ID == 7
-    output_filename = "../results/MAT_files/three_household_faithful_bubble_shorter_visit_plan_alternative_analysis_test.mat"
+    output_filename = "../results/MAT_files/three_household_faithful_bubble_shorter_visit_plan_alternative_analysis.mat"
 elseif job_ID == 8
-    output_filename = "../results/MAT_files/three_household_faithful_bubble_visit_plan_alternative_analysis_test.mat"
+    output_filename = "../results/MAT_files/three_household_faithful_bubble_visit_plan_alternative_analysis.mat"
 elseif job_ID == 9
-    output_filename = "../results/MAT_files/three_household_fixed_bubble_visit_plan_alternative_analysis_test.mat"
+    output_filename = "../results/MAT_files/three_household_fixed_bubble_visit_plan_alternative_analysis.mat"
 elseif job_ID == 10
-    output_filename = "../results/MAT_files/three_household_unfaithful_bubble_visit_plan_alternative_analysis_test.mat"
+    output_filename = "../results/MAT_files/three_household_unfaithful_bubble_visit_plan_alternative_analysis.mat"
 elseif job_ID == 11
     output_filename = "../results/MAT_files/support_bubble_visit_plan_main_analysis_lower_adherence.mat"
 elseif job_ID == 12
