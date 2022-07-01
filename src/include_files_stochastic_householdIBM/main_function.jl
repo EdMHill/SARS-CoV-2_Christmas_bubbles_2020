@@ -408,16 +408,6 @@ function run_stochastic_household_IBM_fn(RNGseed::Int64,
                             end
                         end
 
-                        # # Irrespective of whether index case self-isolates,
-                        # # adherent members of their household may also isolate.
-                        # for hh = 1:household_contacts_per_node[person_itr]
-                        #     contact_ID = contacts.household_contacts[person_itr][hh]
-                        #     if (states.hh_isolation[contact_ID]==1) &&
-                        #         (states.symp_timeisol[contact_ID]==0) # Individual not already symptomatic themselves
-                        #         states.timeisol[contact_ID] = 1
-                        #     end
-                        # end
-
                         # If contact tracing active, increase number of symptomatic infections
                         # in household by one
                         if contact_tracing_active == true
@@ -464,20 +454,6 @@ function run_stochastic_household_IBM_fn(RNGseed::Int64,
                                 end
                             end
                         end
-
-                        # # Household members now aware of index case having symptoms.
-                        # # Adherent members of their household may also now isolate,
-                        # # assuming infected displays symptoms
-                        # # Note they are delayed in isolating, in line with delay
-                        # # of the index case
-                        # for hh = 1:household_contacts_per_node[person_itr]
-                        #     contact_ID = contacts.household_contacts[person_itr][hh]
-                        #     if (states.hh_isolation[contact_ID]==1) && (states.symp_timeisol[contact_ID]==0) # Individual not already symptomatic themselves
-                        #         states.timeisol[contact_ID] = 1 + states.delay_adherence[person_itr]
-                        #             # Individual shortens isolation by length of time since
-                        #             # unwell individual began displaying symptoms
-                        #     end
-                        # end
                     end
                 end
 
