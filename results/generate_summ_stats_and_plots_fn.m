@@ -899,15 +899,31 @@ function [incidence_percentile_percentages_output,...
         x_limits = [0 24];
         if main_analysis_flag == true
             if plot_percentages_flag == true
-                y_limits = [0.0 0.21];
+                if main_adherence_flag == true
+                    y_limits = [0.0 0.21];
+                else
+                    y_limits = [0.0 0.26];
+                end
             else
-                y_limits = [0.0 0.0021];
+                if main_adherence_flag == true
+                    y_limits = [0.0 0.0021];
+                else
+                    y_limits = [0.0 0.0026];
+                end
             end
         else
             if plot_percentages_flag == true
-                y_limits = [0.0 0.1];
+                if main_adherence_flag == true
+                    y_limits = [0.0 0.10];
+                else
+                    y_limits = [0.0 0.12];
+                end
             else
-                y_limits = [0.0 0.001];
+                if main_adherence_flag == true
+                    y_limits = [0.0 0.0010];
+                else
+                    y_limits = [0.0 0.0012];
+                end
             end
         end
         
@@ -1210,9 +1226,17 @@ function [incidence_percentile_percentages_output,...
         x_limits = [0 24];
         
         if plot_percentages_flag == true
-            y_limits = [0.0 1.4];
+            if main_adherence_flag == true
+                y_limits = [0.0 1.4];
+            else
+                y_limits = [0.0 2.0];
+            end
         else
-            y_limits = [0.0 0.014];
+            if main_adherence_flag == true
+                y_limits = [0.0 0.014];
+            else
+                y_limits = [0.0 0.020];
+            end
         end
         
         % Set plot fontsize
@@ -1395,10 +1419,7 @@ function plot_violin_panels_group_by_age(input_data,...
             t.FontWeight = 'bold';
         end
     end
-    
-%     % Add line at y=1
-%     plot([0 x_limits(end)],[1 1],'--','Color',[0.5 0.5 0.5],'LineWidth',1.5);
-%     
+      
     % Set axes limits
     xlim(x_limits)
     ylim(y_limits)
@@ -1422,163 +1443,4 @@ function plot_violin_panels_group_by_age(input_data,...
         % Save figure to file  
         export_fig(save_filename,'-pdf','-r1200')
     end
-    
-%     % Add title
-%     title(title_vec{stat_itr})
-
-%     % Add legend
-%     Initialise patch vector and populate
-%     H = gobjects(n_scens,1);
-%     for scen_itr = 1:n_scens
-%         H(scen_itr) = fill(NaN,NaN,[0 0 0],'facealpha', alpha_vec(scen_itr),'DisplayName',legend_label{scen_itr});
-%     end
-% 
-%     Construct the legend
-%     legend(H,...
-%         'LineWidth',1.5,...
-%         'FontSize',plot_fontsize)   
 end
-
-% %% Produce violin plot with grouping by age group and shading by scenario
-% %% Age distribution of new latent infects on stated calendar date
-% 
-% % Set x-positions data will be plotted at
-% x_plot_pos = [1:5;7:11;13:17];
-% 
-% % Set colour values for each plotting group
-% colour_vals = [0, 0.4470, 0.7410;
-%                 0.8500, 0.3250, 0.0980;
-%                 0.9290, 0.6940, 0.1250;
-%                 0.4940, 0.1840, 0.5560;
-%                 0.4660, 0.6740, 0.1880;
-%                 0.3010, 0.7450, 0.9330;
-%                 0.5, 0.5, 0.5];
-%             
-% % Set shading intensity of each violin
-% alpha_vec = [1. 0.8 0.6 0.4 0.2];
-%             
-% % Set up legend labels
-% legend_label = {'Scenario A','Scenario B','Scenario C','Scenario D','Scenario E'};
-% 
-% % Set x-axis labels
-% xaxis_label = 'Age group';
-% xticks_vals = [3 9 15];
-% xticks_labels = {'0-19yrs','20-64yrs','65+yrs'};
-% 
-% % Set y-axis label
-% if plot_percentages_flag == true
-%     yaxis_label_vec = {'Percentage of those infected on 23 December 2020 (%)';...
-%                     'Percentage of those infected on 24 December 2020 (%)';...
-%                     'Percentage of those infected on 25 December 2020 (%)';...
-%                     'Percentage of those infected on 26 December 2020 (%)';...
-%                     'Percentage of those infected on 27 December 2020 (%)'};
-% else
-%     yaxis_label_vec = {'Proportion of those infected on 23 December 2020 (%)';...
-%                     'Proportion of those infected on 24 December 2020 (%)';...
-%                     'Proportion of those infected on 25 December 2020 (%)';...
-%                     'Proportion of those infected on 26 December 2020 (%)';...
-%                     'Proportion of those infected on 27 December 2020 (%)'};
-% end
-% 
-% %Set axes limits
-% x_limits = [0 18];
-% 
-% if plot_percentages_flag == true
-%     y_limits = [0 100];
-% else
-%     y_limits = [0 1];
-% end
-% 
-% % Set plot fontsize
-% plot_fontsize = 22;   
-% 
-% % Set up plot data
-% input_data = cell(5,1);
-% 
-% input_data{1} = cat(3,new_latent_23Dec2020_support_bubble_only_normalised,...
-%                     new_latent_23Dec2020_short_faithful_bubble_normalised,...
-%                     new_latent_23Dec2020_faithful_bubble_normalised,...
-%                     new_latent_23Dec2020_fixed_bubble_normalised,...
-%                     new_latent_23Dec2020_unfaithful_bubble_normalised);
-% 
-% input_data{2} = cat(3,new_latent_24Dec2020_support_bubble_only_normalised,...
-%                     new_latent_24Dec2020_short_faithful_bubble_normalised,...
-%                     new_latent_24Dec2020_faithful_bubble_normalised,...
-%                     new_latent_24Dec2020_fixed_bubble_normalised,...
-%                     new_latent_24Dec2020_unfaithful_bubble_normalised);
-% 
-% input_data{3} = cat(3,new_latent_25Dec2020_support_bubble_only_normalised,...
-%                     new_latent_25Dec2020_short_faithful_bubble_normalised,...
-%                     new_latent_25Dec2020_faithful_bubble_normalised,...
-%                     new_latent_25Dec2020_fixed_bubble_normalised,...
-%                     new_latent_25Dec2020_unfaithful_bubble_normalised);
-% 
-% input_data{4} = cat(3,new_latent_26Dec2020_support_bubble_only_normalised,...
-%                     new_latent_26Dec2020_short_faithful_bubble_normalised,...
-%                     new_latent_26Dec2020_faithful_bubble_normalised,...
-%                     new_latent_26Dec2020_fixed_bubble_normalised,...
-%                     new_latent_26Dec2020_unfaithful_bubble_normalised);
-% 
-% input_data{5} = cat(3,new_latent_27Dec2020_support_bubble_only_normalised,...
-%                     new_latent_27Dec2020_short_faithful_bubble_normalised,...
-%                     new_latent_27Dec2020_faithful_bubble_normalised,...
-%                     new_latent_27Dec2020_fixed_bubble_normalised,...
-%                     new_latent_27Dec2020_unfaithful_bubble_normalised);
-% 
-% %%
-% % Set save filename
-% if main_analysis_flag == true
-%     if plot_percentages_flag == true
-%         save_filename = 'figure_files/new_latent_age_violins_percentages_main_analysis';
-%     else
-%         save_filename = 'figure_files/new_latent_age_violins_main_analysis';
-%     end
-% else
-%     if plot_percentages_flag == true
-%         save_filename = 'figure_files/new_latent_age_violins_percentages_alternative_analysis';
-%     else
-%         save_filename = 'figure_files/new_latent_age_violins_alternative_analysis';
-%     end
-% end
-% 
-% % Amend save_filename if using lower adherence data
-% if main_adherence_flag == false
-%     save_filename = strcat(save_filename,'_lower_adherence');
-% end
-% 
-% for plot_itr = 1:5
-%     % Add calendar date suffix to save_filename
-%     save_filename_final = strcat(save_filename,save_filename_calender_date_suffixes{plot_itr});
-% 
-%     % Generate figure
-%     if plot_percentages_flag == true
-%         % Multiply input data by 100, to plot as percentages
-%         plot_violin_panels_group_by_age(input_data{plot_itr}*100,...
-%                                             x_plot_pos,...
-%                                             colour_vals,...
-%                                             alpha_vec,...
-%                                             legend_label,...
-%                                             xaxis_label,...
-%                                             yaxis_label_vec{plot_itr},...
-%                                             xticks_vals,...
-%                                             xticks_labels,...
-%                                             x_limits,...
-%                                             y_limits,...
-%                                             plot_fontsize,...
-%                                             save_filename_final)
-%     else
-%         plot_violin_panels_group_by_age(input_data{plot_itr},...
-%                                             x_plot_pos,...
-%                                             colour_vals,...
-%                                             alpha_vec,...
-%                                             legend_label,...
-%                                             xaxis_label,...
-%                                             yaxis_label_vec{plot_itr},...
-%                                             xticks_vals,...
-%                                             xticks_labels,...
-%                                             x_limits,...
-%                                             y_limits,...
-%                                             plot_fontsize,...
-%                                             save_filename_final)
-%     end
-% end

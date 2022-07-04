@@ -28,7 +28,7 @@ plot_percentages_flag = true;
 % sensitivity analysis with longer time horizon (flag value = false)
 main_analysis_flag = true;
 
-% Specify if looking at main adherence of probability of 70% (flag value = true) 
+% Specify if looking at main adherence )of probability of 70% (flag value = true) 
 % or lower adherence run with probability of 30% (flag value = false)
 main_adherence_flag = true;
 
