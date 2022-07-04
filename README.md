@@ -2,6 +2,8 @@
 
 This repository contains files for performing computational simulations of a stochastic individual based model of a population of households with three-age classes (0-19yrs, 20-64yrs, 65+yrs) to explore SARS-CoV-2 transmission for different household bubble strategies.
 
+[![DOI](https://zenodo.org/badge/509207602.svg)](https://zenodo.org/badge/latestdoi/509207602)
+
 The code was developed for the analysis presented in the scientific paper "Modelling the epidemiological implications for SARS-CoV-2 of Christmas household bubbles in England" by Edward M. Hill.
 
 Model simulations are performed using the programming language Julia.
