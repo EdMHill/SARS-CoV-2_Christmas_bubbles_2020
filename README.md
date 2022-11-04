@@ -6,6 +6,8 @@ This repository contains files for performing computational simulations of a sto
 
 The code was developed for the analysis presented in the scientific paper "Modelling the epidemiological implications for SARS-CoV-2 of Christmas household bubbles in England" by Edward M. Hill.
 
+Publication details: Edward M Hill. (2023) Modelling the epidemiological implications for SARS-CoV-2 of Christmas household bubbles in England. *Journal of Theoretical Biology* 557: 111331. doi: 10.1016/j.jtbi.2022.111331. URL: https://doi.org/10.1016/j.jtbi.2022.111331.
+
 Model simulations are performed using the programming language Julia.
 Julia makes use of environments, allowing bespoke package lists for separate projects. Documentation on working with environments and installing packages in the same state that is given by the project manifest: https://pkgdocs.julialang.org/v1/environments/#Using-someone-else's-project
 
